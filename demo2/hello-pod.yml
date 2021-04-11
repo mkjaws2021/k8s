@@ -1,0 +1,13 @@
+---
+ apiVersion: v1
+ kind: Pod
+ metadata:
+    name: hello-pod
+    labels:
+        app: dev
+ spec:
+    containers:
+      - name: jenkins
+        image: jenkins/jenkins
+        ports:
+           - containerPort: 8080
