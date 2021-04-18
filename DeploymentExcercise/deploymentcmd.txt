@@ -1,0 +1,30 @@
+git clone https://github.com/mkjaws2021/k8s.git
+mkdri k8s/DeploymentExcercise
+mkdir k8s/DeploymentExcercise
+cp deployment-definition-1.yaml k8s/DeploymentExcercise/
+cd k8s/DeploymentExcercise/
+ls
+vi deployment-definition-1.yaml 
+git status
+cd ..
+git status
+cd DeploymentExcercise/
+ls
+cd ..
+alias kga='kubectl get all -o wide'
+alias kgd='kubectl get deployment -o wide'
+alias kgp='kubectl get pods -o wide'
+kga
+vi DeploymentExcercise/deployment-definition-1.yaml 
+kubectl create -f DeploymentExcercise/deployment-definition-1.yaml 
+cp DeploymentExcercise/deployment-definition-1.yaml DeploymentExcercise/deployment-definition-httpd.yaml 
+vi DeploymentExcercise/deployment-definition-httpd.yaml 
+kubectl create -f DeploymentExcercise/deployment-definition-httpd.yaml --dry-run=client
+git add .
+git status 
+git commit -m "Added deployement"
+git config --global user.email "mkj.aws2021@gmail.com"
+git config --global user.name "mkjaws2021"
+git commit -m "Added deployement"
+git push origin main
+history | cut -c 8- > DeploymentExcercise/deploymentcmd.txt
