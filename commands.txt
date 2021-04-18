@@ -43,3 +43,13 @@ history | cut 8 -
 history
 history | cut -c  8-
 history | cut -c  8- > commands.txt
+kk get pods
+kubectl scale --replicas=5 -f new-replica-set.yml 
+kk get pods
+history | cut -c 8- | tail 4
+history | cut -c 8- | tail -n 4
+history | cut -c 8- | tail -n 6 >> commands.txt 
+cat commands.txt 
+kubectl scale --replicas=2 replicaset new-replica-set
+kk get pods
+history | cut -c 8- | tail -n 4 >> commands.txt 
