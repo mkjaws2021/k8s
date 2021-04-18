@@ -1,0 +1,45 @@
+git clone https://github.com/mkjaws2021/k8s.git
+ls
+alias kk='kubectl'
+kk get pods
+kk get repicasets
+kk get repicaset
+kk get replicaset
+kk get pods
+kk describe pod new-replica-set-9
+kk get pods
+kk delete pod new-replica-set-9hswg
+kk get pods
+vi replicaset-definition-1.yaml 
+kk create -f replicaset-definition-1.yaml 
+vi replicaset-definition-1.yaml 
+kk create -f replicaset-definition-1.yaml 
+vi replicaset-definition-2.yaml 
+kk create -f replicaset-definition-2.yaml 
+kk get replicaset
+ls
+cp replicaset-definition-* k8s/
+ls k8s
+kubectl delete -f replicaset-definition-1.yaml
+kubectl delete -f replicaset-definition-2.yaml
+cd k8s/
+ls
+mkdir ReplicSetExcecise
+mv replicaset-definition-* ReplicSetExcecise/
+ls
+kk get replicset
+kk get replicasets
+kubectl get replicasets.apps new-replica-set -o yaml 
+kubectl get replicasets.apps new-replica-set -o yaml > new-replica-set.yml
+vi new-replica-set.yml 
+kubectl get replicaset
+kubectl get pods
+kubectl apply -f new-replica-set.yml 
+kubectl delete -f new-replica-set.yml 
+kubectl apply -f new-replica-set.yml 
+kk get all
+history | cut 8-
+history | cut 8 -
+history
+history | cut -c  8-
+history | cut -c  8- > commands.txt

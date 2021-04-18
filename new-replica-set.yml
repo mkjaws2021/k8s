@@ -1,0 +1,81 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  creationTimestamp: "2021-04-18T04:12:46Z"
+  generation: 1
+  managedFields:
+  - apiVersion: apps/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        f:fullyLabeledReplicas: {}
+        f:observedGeneration: {}
+        f:replicas: {}
+    manager: kube-controller-manager
+    operation: Update
+    time: "2021-04-18T04:12:46Z"
+  - apiVersion: apps/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:spec:
+        f:replicas: {}
+        f:selector: {}
+        f:template:
+          f:metadata:
+            f:labels:
+              .: {}
+              f:name: {}
+          f:spec:
+            f:containers:
+              k:{"name":"busybox-container"}:
+                .: {}
+                f:command: {}
+                f:image: {}
+                f:imagePullPolicy: {}
+                f:name: {}
+                f:resources: {}
+                f:terminationMessagePath: {}
+                f:terminationMessagePolicy: {}
+            f:dnsPolicy: {}
+            f:restartPolicy: {}
+            f:schedulerName: {}
+            f:securityContext: {}
+            f:terminationGracePeriodSeconds: {}
+    manager: python-requests
+    operation: Update
+    time: "2021-04-18T04:12:46Z"
+  name: new-replica-set
+  namespace: default
+  resourceVersion: "1519"
+  uid: 7e2da38a-4afc-4f29-8fc0-1bea2dd04f1b
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      name: busybox-pod
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        name: busybox-pod
+    spec:
+      containers:
+      - command:
+        - sh
+        - -c
+        - echo Hello Kubernetes! && sleep 3600
+        image: busybox
+        imagePullPolicy: Always
+        name: busybox-container
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+status:
+  fullyLabeledReplicas: 4
+  observedGeneration: 1
+  replicas: 4
