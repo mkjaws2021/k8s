@@ -7,7 +7,7 @@ echo alias kgd=\'kubectl get deployments -o wide\'>> ~/.bashrc
 echo alias kgp=\'kubectl get pods -o wide\'>> ~/.bashrc
 echo alias kgn=\'kubectl get namespace\'>> ~/.bashrc
 echo alias kgr=\'kubectl get replicaset -o wide\'>> ~/.bashrc
-#source ~/.bashrc
+echo alias kgsvc=\'kubectl get services\'>> ~/.bashrc
 #source ~/.bashrc
 alias brc='source ~/.bashrc'
 cd ~/k8s/
