@@ -1,0 +1,49 @@
+git clone https://github.com/mkjaws2021/k8s.git
+cd k8s/
+ls
+kga
+sh gitConf_k8alias.sh 
+soruce ~/.bashrc 
+source ~/.bashrc 
+cd k8s/
+kgp
+mkdir ImperativeExcercise
+cd ImperativeExcercise/
+kubectl run nginx-pod -image=nginx:alpine
+kubectl run nginx-pod --image=nginx:alpine
+kgp
+kubectl run redis --image=redis:alpine --labels:tier=db
+kubectl run redis --image=redis:alpine --label:tier=db
+kubectl run redis --image=redis:alpine --labels=tier=db
+kgp
+kgp --show-labesl
+kgp --show-labels
+kubectl create service clusterip redis-service --port=6379:6379
+kubectl create service clusterip redis-service --tcp=6379:6379
+kubectl get svc
+kubectl get svc -o wide
+kubectl delete svc redis-service 
+kubectl create service clusterip --name=redis-service --tcp=6379:6379
+kubectl expose pod redis --name=redis-service --port=6379
+kubectl get svc -o wide
+kubectl edit svc redis-service 
+kubectl create deployment webapp --image=kodekloud/webapp-color --replicas=3 
+kgp
+kubectl run custom-nginx --image=nginx --tcp=8080
+kubectl run custom-nginx --image=nginx -o yaml > customngix.yml
+vi customngix.yml 
+kubectl create -f customngix.yml 
+vi customngix.yml 
+kubectl create -f customngix.yml 
+vi customngix.yml 
+kubectl create -f customngix.yml 
+kubectl delete pod custom-nginx 
+kubectl create -f customngix.yml 
+kubectl repalce --force -f customngix.yml 
+kubectl replace --force -f customngix.yml 
+kubectl create namespace dev-ns
+kubectl create deployment redis-deploy --namespace=dev-ns  --image=redis --replicas=2 
+kgd
+kgd -n dev
+kgd -n dev-ns
+history | cut -c 8- > ImperativeCmd.txt

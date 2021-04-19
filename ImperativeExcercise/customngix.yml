@@ -1,0 +1,77 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: "2021-04-19T07:37:03Z"
+  labels:
+    run: custom-nginx
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:run: {}
+      f:spec:
+        f:containers:
+          k:{"name":"custom-nginx"}:
+            .: {}
+            f:image: {}
+            f:imagePullPolicy: {}
+            f:name: {}
+            f:resources: {}
+            f:terminationMessagePath: {}
+            f:terminationMessagePolicy: {}
+        f:dnsPolicy: {}
+        f:enableServiceLinks: {}
+        f:restartPolicy: {}
+        f:schedulerName: {}
+        f:securityContext: {}
+        f:terminationGracePeriodSeconds: {}
+    manager: kubectl-run
+    operation: Update
+    time: "2021-04-19T07:37:03Z"
+  name: custom-nginx
+  namespace: default
+  resourceVersion: "4379"
+  uid: ac7af9f8-0320-42c7-8465-f2650ac7cd1b
+spec:
+  containers:
+  - image: nginx
+    imagePullPolicy: Always
+    name: custom-nginx
+    ports:
+        - containerPort: 8080
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: default-token-hxsdm
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  preemptionPolicy: PreemptLowerPriority
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext: {}
+  serviceAccount: default
+  serviceAccountName: default
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  volumes:
+  - name: default-token-hxsdm
+    secret:
+      defaultMode: 420
+      secretName: default-token-hxsdm
+status:
+  phase: Pending
+  qosClass: BestEffort
