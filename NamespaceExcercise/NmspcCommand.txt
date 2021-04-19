@@ -1,0 +1,75 @@
+git clone https://github.com/mkjaws2021/k8s.git
+cd k8s/
+vi gitsetup.sh
+sh gitsetup.sh 
+vi gitsetup.sh 
+sh gitsetup.sh 
+kga
+git config
+git config get
+git config -list
+git config -l
+vi gitsetup.sh 
+sh gitsetup.sh 
+source ~/.bashrc 
+kga
+kgd
+cd ~
+cd k8s/
+cat gitsetup.sh 
+echo alias kga='kubectl get all -o wide' >> ~/.bashrc
+ls
+source ~/.bashrc 
+vi ~/.bashrc 
+source ~/.bashrc 
+kga
+echo alias kgd=\'kubectl get deployment -o wide\' >> ~/.bashrc
+source ~/.bashrc 
+kgd
+cd ~
+kga
+cd ~
+cd k8s/
+ls
+vi gitsetup.sh 
+sh gitsetup.sh 
+pwd
+vi gitsetup.sh 
+sh gitsetup.sh 
+vi gitsetup.sh 
+sh gitsetup.sh 
+kgd
+kgp
+tail -n 2 ~/.bashrc 
+kgn
+source ~/.bashrc 
+kgn
+cd k8s/
+ls
+vi gitsetup.sh 
+sh gitsetup.sh 
+kgn
+kgp
+tail n -5 ~/.bashrc 
+tail n 5 ~/.bashrc 
+kgr
+ls
+git add.
+git add .
+git commit -m "Added gitsetup.sh for alias and config"
+git push origin main 
+ls
+mv gitsetup.sh gitConf_k8alias.sh
+ls
+git add .
+git commit -m "Added gitsetup.sh for alias and config"
+git commit -m "Added gitsetup.sh for alias and config with name corrction"
+git push orgin main
+git push origin main
+kgp
+kgp -n research
+kubectl run redis --image=redis --namespace=finance
+kgp -n finance
+kgp -A
+mkdir NamespaceExcercise
+history | cut -c 8- >> NamespaceExcercise/NmspcCommand.txt
