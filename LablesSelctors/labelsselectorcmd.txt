@@ -1,0 +1,24 @@
+git clone https://github.com/mkjaws2021/k8s.git
+mkdir k8s/LablesSelctors
+sh k8s/gitConf_k8alias.sh 
+source ~/.bashrc 
+ls
+cd k8s/LablesSelctors/
+kgp --show-labels
+kgp --selectors=app=dev
+kgp --selector=app=dev
+kgp --show-labels
+kgp --selector=env=dev
+kgp --selector=bu=finance
+kpa --selector=env=prod
+kga --selector=env=prod
+kga --selector=env=prod,bu=finance
+kga --show-labels
+kga --selector=env=prod,bu=finance,tier=frontend
+cp ~/replicaset-definition-1.yaml .
+ls
+vi replicaset-definition-1.yaml 
+kubectl apply -f replicaset-definition-1.yaml 
+kga
+vi replicaset-definition-1.yaml 
+history | cut -c 8- > labelsselectorcmd.txt
