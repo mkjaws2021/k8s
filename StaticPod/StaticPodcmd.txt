@@ -1,0 +1,41 @@
+git clone https://github.com/mkjaws2021/k8s.git
+cd k8s/
+sh gitConf_k8alias.sh 
+source ~/.bashrc 
+mkdri k8s/StaticPod
+mkdir k8s/StaticPod
+cd k8s/StaticPod/
+ls
+kgp -A
+kgp
+ls
+cd /etc/kubernetes/
+ls
+cd manifests/
+ls
+cp * ~/k8s/StaticPod/
+ls
+cat kube-apiserver.yaml 
+vi staticbusybox.yml
+cp staticbusybox.yml ~/k8s/StaticPod/
+kgp -A
+kubectl describe pod static-busybox-controlplane -ndefault
+vi staticbusybox.yml 
+kubectl delete pod static-busybox-controlplane
+ls
+kgp
+vi staticbusybox.yml 
+kgp
+kubectl describe pod static-busybox-controlplane -ndefault
+kgp
+kubectl delete pod static-greenbox-node01
+kgp
+kgp -A
+kgn
+kgn -o wide
+cd ~/k8s/StaticPod/
+ls
+vi greenbox.yml
+docker ps -a
+echo " cd /var/lib/kubelet/config.yaml"
+history | cut -c 8- > StaticPodcmd.txt
