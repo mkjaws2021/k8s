@@ -5,9 +5,11 @@ git config --global user.email "mkj.aws2021@gmail.com"
 echo alias kga=\'kubectl get all -o wide\' >> ~/.bashrc 
 echo alias kgd=\'kubectl get deployments -o wide\'>> ~/.bashrc
 echo alias kgp=\'kubectl get pods -o wide\'>> ~/.bashrc
-echo alias kgn=\'kubectl get namespace\'>> ~/.bashrc
+echo alias kgn=\'kubectl get nodes -o wide\'>> ~/.bashrc
+echo alias kgns=\'kubectl get namespace\'>> ~/.bashrc
 echo alias kgr=\'kubectl get replicaset -o wide\'>> ~/.bashrc
 echo alias kgsvc=\'kubectl get services\'>> ~/.bashrc
+echo alias kgd=\'kubectl get daemonsets -o wide\'>> ~/.bashrc
 #source ~/.bashrc
 alias brc='source ~/.bashrc'
 cd ~/k8s/
