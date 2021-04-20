@@ -1,0 +1,44 @@
+git clone https://github.com/mkjaws2021/k8s.git
+curl https://github.com/mkjaws2021/k8s/blob/main/gitConf_k8alias.sh
+wget https://github.com/mkjaws2021/k8s/blob/main/gitConf_k8alias.sh
+ls
+rm gitConf_k8alias.sh 
+cd mkdir k8s/LimitsRequests
+ls
+sh k8s/gitConf_k8alias.sh 
+source ~/.bashrc 
+cd k8s/LimitsRequests/
+kgp
+kubctl edit pod rabbit
+kuectl edit pod rabbit
+kubectl edit pod rabbit
+ls
+cat Rabbit.yml 
+kubetctl get pods -o jsonpath
+kubectl get pods -o jsonpath
+kubectl get pod -o jsonpath
+kubectl get pod -o jsonpath {}
+kubectl get pod rabbit -o jsonpath > rabbit.json
+ls
+cat rabbit.json 
+kubectl get pods --selector=app=cassandra -o   jsonpath='{.items[*].metadata.name}'
+kubectl get pods jsonpath='{.items[*].metadata.name}' 
+kubectl get pods -o jsonpath='{.items[*].metadata.name}' 
+kubectl get pods -o jsonpath='{.items[*].metadata.app}'
+kubectl get pods -o jsonpath='{.items[*].metadata}'
+kubectl get pods -o jsonpath
+kubectl get pods -o jsonpath={*}
+kubectl get pods -o jsonpath='{*}'
+kubectl get pods -o jsonpath='{.}'
+kubectl get pods -o jsonpath='{.items}'
+kubectl get pods -o jsonpath='{/}'
+kubectl delete pod rabbit 
+kgp
+kubectl edit pod elephant 
+cp /tmp/kubectl-edit-d1u44.yaml elephant.yml
+ls
+kubectl replace -f elephant.yml 
+kubectl delete pod elephant 
+kubectl apply -f elephant.yml 
+kgp
+history | cut -c 8- > LimitsRequestscmd.txt

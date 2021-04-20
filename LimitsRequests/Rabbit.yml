@@ -1,0 +1,109 @@
+# Please edit the object below. Lines beginning with a '#' will be ignored,
+# and an empty file will abort the edit. If an error occurs while saving this file will be
+# reopened with the relevant failures.
+#
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: "2021-04-20T08:42:42Z"
+  name: rabbit
+  namespace: default
+  resourceVersion: "1049"
+  uid: b15ed187-9ba1-4aec-b38f-485b2eb96d9a
+spec:
+  containers:
+  - args:
+    - sleep
+    - "1000"
+    image: ubuntu
+    imagePullPolicy: Always
+    name: cpu-stress
+    resources:
+      limits:
+        cpu: "2"
+      requests:
+        cpu: "1"
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: default-token-hcskr
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  nodeName: controlplane
+  preemptionPolicy: PreemptLowerPriority
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext: {}
+  serviceAccount: default
+  serviceAccountName: default
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  volumes:
+  - name: default-token-hcskr
+    secret:
+      defaultMode: 420
+      secretName: default-token-hcskr
+status:
+  conditions:
+  - lastProbeTime: null
+    lastTransitionTime: "2021-04-20T08:42:42Z"
+    status: "True"
+    type: Initialized
+  - lastProbeTime: null
+    lastTransitionTime: "2021-04-20T08:42:42Z"
+    message: 'containers with unready status: [cpu-stress]'
+    reason: ContainersNotReady
+    status: "False"
+    type: Ready
+  - lastProbeTime: null
+    lastTransitionTime: "2021-04-20T08:42:42Z"
+    message: 'containers with unready status: [cpu-stress]'
+    reason: ContainersNotReady
+    status: "False"
+    type: ContainersReady
+  - lastProbeTime: null
+    lastTransitionTime: "2021-04-20T08:42:42Z"
+    status: "True"
+    type: PodScheduled
+  containerStatuses:
+  - containerID: docker://0c9d3705b58084639052c7e428e7be81e5c0f59fab03e7a4bd58f56fd27aa792
+    image: ubuntu:latest
+    imageID: docker-pullable://ubuntu@sha256:3c9c713e0979e9bd6061ed52ac1e9e1f246c9495aa063619d9d695fb8039aa1f
+    lastState:
+      terminated:
+        containerID: docker://0c9d3705b58084639052c7e428e7be81e5c0f59fab03e7a4bd58f56fd27aa792
+        exitCode: 128
+        finishedAt: "2021-04-20T08:45:56Z"
+        message: 'OCI runtime create failed: container_linux.go:367: starting container
+          process caused: process_linux.go:495: container init caused: process_linux.go:458:
+          setting cgroup config for procHooks process caused: failed to write "200000":
+          write /sys/fs/cgroup/cpu,cpuacct/kubepods/burstable/podb15ed187-9ba1-4aec-b38f-485b2eb96d9a/0c9d3705b58084639052c7e428e7be81e5c0f59fab03e7a4bd58f56fd27aa792/cpu.cfs_quota_us:
+          invalid argument: unknown'
+        reason: ContainerCannotRun
+        startedAt: "2021-04-20T08:45:56Z"
+    name: cpu-stress
+    ready: false
+    restartCount: 5
+    started: false
+    state:
+      waiting:
+        message: back-off 2m40s restarting failed container=cpu-stress pod=rabbit_default(b15ed187-9ba1-4aec-b38f-485b2eb96d9a)
+        reason: CrashLoopBackOff
+  hostIP: 10.236.17.9
+  phase: Running
+  podIP: 10.244.0.4
+  podIPs:
+  - ip: 10.244.0.4
+  qosClass: Burstable
+  startTime: "2021-04-20T08:42:42Z"
