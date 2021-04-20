@@ -1,0 +1,38 @@
+git clone https://github.com/mkjaws2021/k8s.git
+mkdri k8s/NodeAffinity
+mkdir k8s/NodeAffinity
+sh k8s/gitConf_k8alias.sh 
+source ~/.bashrc 
+ls
+cd k8s/NodeAffinity/
+kubectl get nodes --show-lables
+kubectl get nodes --show-labels
+kubectl label node node01 color=blue
+kubectl get nodes --show-labels
+kubectl create deployment blue --image=nginx --replicas=3 -o yaml --dry-run=client 
+kubectl create deployment blue --image=nginx --replicas=3 -o yaml --dry-run=client > blue.yml
+kubectl create deployment blue --image=nginx --replicas=3
+kga
+kubectl describe node node01 | grep 'Taint'
+kubectl describe node controlplane | grep 'Taint'
+kga
+vi blue.yml 
+kubectl apply -f blue.yml 
+vi blue.yml 
+kubectl apply -f blue.yml 
+kga
+vi red.yml
+kubectl get nodes --show-labels
+vi red.yml 
+kubectl apply -f red.yml 
+vi red.yml 
+kubectl apply -f red.yml 
+vi red.yml 
+kubectl apply -f red.yml 
+vi red.yml 
+kubectl apply -f red.yml 
+kubectl get pods
+kgp
+git add -A
+git status
+history | cut -c 8- > NodeAffinitycmds.txt
