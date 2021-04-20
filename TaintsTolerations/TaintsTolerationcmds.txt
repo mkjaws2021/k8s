@@ -1,0 +1,40 @@
+git clone https://github.com/mkjaws2021/k8s.git
+mkdir k8s/TaintsTolerations
+sh k8s/gitConf_k8alias.sh 
+source ~/.bashrc 
+ls
+cd k8s/TaintsTolerations/
+kpp
+kgp
+kpg -A
+kgp -A
+kgn
+kubectl get nodes
+kubectl get nodes -o wide
+kubectl describe node node01 | grep 'Taint'
+kubectl describe node controlplane | grep 'Taint'
+kubectl taint node node01 spray=mortein:NoSchedule
+kubectl describe node node01 | grep 'Taint'
+kubect run mosquito --image=nginx
+kubectl run mosquito --image=nginx
+kgp
+kubect run bee --image=nginx --dry-run=client -o yaml > bee.yml
+kubectl run bee --image=nginx --dry-run=client -o yaml > bee.yml
+ls
+vi bee.yml 
+kubectl apply -f bee.yml 
+vi bee.yml 
+kubectl apply -f bee.yml 
+vi bee.yml 
+kubectl apply -f bee.yml 
+kgp
+vi bee.yml 
+kgp -o wide
+kubectl describe nodes controlplane | grep 'Taint'
+kubectl describe nodes node01 | grep 'Taint'
+kubectl taint node controlplane node-role.kubernetes.io/master:NoSchedule-
+kubectl describe nodes controlplane | grep 'Taint'
+kgp
+kubectl describe pod mosquito 
+kgp
+history | cut -c 8- > TaintsTolerationcmds.txt
