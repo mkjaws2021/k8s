@@ -39,3 +39,25 @@ https://kubernetes.io/docs/tasks/tools/install-kubectl/
 curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
 
 kubectl get nodes
+
+
+---------Windows 
+
+Document - Minikube Installation Commands
+Official Documentation:
+
+
+
+https://kubernetes.io/docs/tasks/tools/install-minikube/
+
+
+
+Commands from the video:
+
+
+
+cd C:\Program Files\Kubernetes\Minikube
+
+minikube start --vm-driver hyperv --hyperv-virtual-switch "Default Switch"
+
+kubectl get nodes
