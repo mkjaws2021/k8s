@@ -1,0 +1,41 @@
+Document - Minikube Installation Commands
+Note:
+
+For RedHat based systems, make sure that SELinux is not running. Verify with following command:
+
+getenforce
+
+If the output is "Enforcing", then it means SELinux is running and in blocking stage. This can effect Minikube installation. You can go ahead and disable SELinux. One quick way is with the "setenforce 0" command.
+
+
+
+Official Documentation for Minikube:
+
+https://kubernetes.io/docs/tasks/tools/install-minikube/
+
+
+
+Docker Installation:
+
+
+
+yum -y install docker
+systemctl start docker
+systemctl enable docker
+
+
+Minikube installation:
+
+
+
+minikube start --vm-driver=none --extra-config=kubelet.cgroup-driver=systemd
+
+
+
+Official Documentation for Kubectl
+
+https://kubernetes.io/docs/tasks/tools/install-kubectl/
+
+curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+
+kubectl get nodes
