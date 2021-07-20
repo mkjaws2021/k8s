@@ -10,3 +10,6 @@ Install Ingress Controller using helm
 
 helm install stable/nginx-ingress --name nginx-ingress --set controller.publishService.enabled=true
 
+Networking :
+
+https://docs.google.com/document/d/1QHNHlvPTJSTIk_sLI-c_qm1n4CbG5RufYJmtw1vycbo/edit?usp=sharing
