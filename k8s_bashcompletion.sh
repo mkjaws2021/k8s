@@ -33,3 +33,4 @@ case "$lsb_dist" in
            echo 'complete -F __start_kubectl k' >>~/.bashrc
            /bin/bash -c 'source ~/.bashrc'
   ;;
+esac
