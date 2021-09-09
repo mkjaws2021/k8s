@@ -19,8 +19,8 @@ case "$lsb_dist" in
            /bin/bash -c 'source /usr/share/bash-completion/bash_completion'
            /bin/bash -c 'source <(kubectl completion bash)' >>~/.bashrc
            echo 'alias k=kubectl' >>~/.bashrc
-           echo "alias kgp='kubectl get pods -o wide --show-labels'" >>~/.bashrc
-           echo "alias kgd=\'kubectl get deployments -o wide --show-labels\'" >>~/.bashrc
+           echo 'alias kgp="kubectl get pods -o wide --show-labels"' >>~/.bashrc
+           echo 'alias kgd="kubectl get deployments -o wide --show-labels"' >>~/.bashrc
            echo 'complete -F __start_kubectl k' >>~/.bashrc
            /bin/bash -c 'source ~/.bashrc'
   ;;
@@ -28,9 +28,9 @@ case "$lsb_dist" in
            /bin/bash -c 'source /usr/share/bash-completion/bash_completion'
            /bin/bash -c 'source <(kubectl completion bash)' >>~/.bashrc
            echo 'alias k=kubectl' >>~/.bashrc
-           echo "alias kgp='kubectl get pods -o wide --show-labels'" >>~/.bashrc
-           echo "alias kgd=\'kubectl get deployments -o wide --show-labels\'" >>~/.bashrc
+           echo 'alias kgp="kubectl get pods -o wide --show-labels"' >>~/.bashrc
+           echo 'alias kgd="kubectl get deployments -o wide --show-labels"' >>~/.bashrc
            echo 'complete -F __start_kubectl k' >>~/.bashrc
            /bin/bash -c 'source ~/.bashrc'
   ;;
-esac
+  esac
